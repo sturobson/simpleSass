@@ -9,6 +9,12 @@ var gulp        = require('gulp'),
     plumber     = require('gulp-plumber'),
     notify      = require('gulp-notify');
 
+
+var sassFolder    = 'sass/';
+var sassFileName  = 'styles.scss';
+var sassWatch     = 'sass/**/*.scss';
+var cssFileName  = 'styles.css';
+
 gulp.task('scss', function() {
     var onError = function(err) {
       notify.onError({
@@ -20,12 +26,12 @@ gulp.task('scss', function() {
       this.emit('end');
   };
 
-  return gulp.src('sass/styles.scss')
+  return gulp.src(sassFolder+sassFileName)
     .pipe(plumber({errorHandler: onError}))
     .pipe(sass())
     .pipe(size({ gzip: true, showFiles: true }))
     .pipe(prefix())
-    .pipe(rename('styles.css'))
+    .pipe(rename(cssFileName))
     .pipe(gulp.dest('css'))
     .pipe(reload({stream:true}))
     .pipe(cssmin())
@@ -44,7 +50,7 @@ gulp.task('browser-sync', function() {
 
 
 gulp.task('watch', function() {
-  gulp.watch('sass/**/*.scss', ['scss']);
+  gulp.watch(sassWatch, ['scss']);
 });
 
 
