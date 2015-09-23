@@ -57,3 +57,5 @@ gulp.task('watch', function() {
 gulp.task('default', ['browser-sync', 'scss', 'watch']);
 
 gulp.task('dev', ['scss', 'watch']);
+
+gulp.task('server', ['browser-sync', 'scss', 'watch']);
