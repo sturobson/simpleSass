@@ -56,13 +56,13 @@ $ npm install
 
 ## Running Simple Sass
 
-Within the file `gulpfiles.js` there are four variables that will need changing if you're applying this to a existing project
+Within the file `gulpfiles.js` there are four variables that will need changing if you're applying this to a existing project:
 
 ```
 var sassFolder    = 'sass/';
 var sassFileName  = 'styles.scss';
 var sassWatch     = 'sass/**/*.scss';
-var cssFileName  = 'styles.css';
+var cssFileName   = 'styles.css';
 ```
 
 ### With a local server
