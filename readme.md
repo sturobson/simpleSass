@@ -35,9 +35,7 @@ Once you have Node install you can easily install the Gulp task manager by enter
 $ npm install gulp --global
 ```
 
-## Installing the UI Pattern Library
-
-You will need to install this repo onto your machine so that you can update, ammend, and and delete patterns to the UI Pattern Library as required.
+## Installing Simple Sass
 
 - Navigate to the to your development folder (usually `sites`).
 ```
