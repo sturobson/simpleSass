@@ -7,7 +7,8 @@ var gulp        = require('gulp'),
     reload      = browserSync.reload,
     size        = require('gulp-size'),
     plumber     = require('gulp-plumber'),
-    notify      = require('gulp-notify');
+    notify      = require('gulp-notify'),
+    sourcemaps   = require('gulp-sourcemaps');
 
 
 var sassFolder    = 'sass/';
@@ -16,6 +17,29 @@ var sassWatch     = 'sass/**/*.scss';
 var cssFileName  = 'styles.css';
 
 gulp.task('scss', function() {
+    var onError = function(err) {
+      notify.onError({
+          title:    "Gulp",
+          subtitle: "Failure!",
+          message:  "Error: <%= error.message %>",
+          sound:    "Beep"
+      })(err);
+      this.emit('end');
+  };
+
+  return gulp.src(sassFolder+sassFileName)
+    .pipe(sourcemaps.init())
+    .pipe(plumber({errorHandler: onError}))
+    .pipe(sass())
+    .pipe(size({ gzip: true, showFiles: true }))
+    .pipe(prefix())
+    .pipe(sourcemaps.write())
+    .pipe(rename(cssFileName))
+    .pipe(gulp.dest('css'))
+    .pipe(reload({stream:true}))
+});
+
+gulp.task('scss:build', function() {
     var onError = function(err) {
       notify.onError({
           title:    "Gulp",
@@ -40,6 +64,7 @@ gulp.task('scss', function() {
     .pipe(gulp.dest('css'))
 });
 
+
 gulp.task('browser-sync', function() {
     browserSync({
         server: {
@@ -59,3 +84,5 @@ gulp.task('default', ['browser-sync', 'scss', 'watch']);
 gulp.task('dev', ['scss', 'watch']);
 
 gulp.task('server', ['browser-sync', 'scss', 'watch']);
+
+gulp.task('build', ['scss']);
