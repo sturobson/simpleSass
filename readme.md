@@ -25,11 +25,11 @@ If either of these throw an error in your command line application then you will
 
 #### To Install Node
 
-The easiest way to download and install Node is via the [downloads page](https://nodejs.org/download/) where you can download the correct version for your operating system.
+The best way to download and install Node is via the [downloads page](https://nodejs.org/download/) where you can download the correct version for your operating system.
 
 #### To Install Gulp
 
-Once you have Node install you can easily install the Gulp task manager by entering the following command into your command line application:
+Once you have Node install you can install the Gulp task manager by entering the following command into your command line application:
 
 ```
 $ npm install gulp --global
