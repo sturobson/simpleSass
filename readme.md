@@ -77,3 +77,10 @@ To run this without a local server to only compile Sass
 ```
 $ gulp dev
 ```
+
+### To build a minified `.css` file
+
+To create a minified css file ready for production
+```
+$ gulp build
+```
