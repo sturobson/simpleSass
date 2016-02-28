@@ -13,23 +13,25 @@ The software you will need is:
   - Node.js
   - Gulp
 
-You can check to see if you have these installed in the command line by entering the name of the package with -v afterwards, for example.
+You can check in your command line application whether you have these installed by entering the name of the package with -v afterwards; for example:
 
 ```
 $ node -v
-
+```
+or 
+```
 $ gulp -v
 ```
 
-If either of these throw an error in your command line application then you will need to install them.
+If either of these throw an error in your command line application, that means that you do not have them installed, and will need to do so before using Simple Sass.
 
 #### To Install Node
 
-The best way to download and install Node is via the [downloads page](https://nodejs.org/download/) where you can download the correct version for your operating system.
+The best way to download and install Node is via the [downloads page](https://nodejs.org/download/).
 
 #### To Install Gulp
 
-Once you have Node install you can install the Gulp task manager by entering the following command into your command line application:
+Once you have Node installed, you can install the Gulp task manager by entering the following command into your command line application:
 
 ```
 $ npm install gulp --global
@@ -37,22 +39,25 @@ $ npm install gulp --global
 
 ## Installing Simple Sass
 
-- Navigate to the to your development folder (usually `sites`).
-```
-$ cd Sites
-```
+- Navigate to your development folder (usually `sites`):
+  ```
+  $ cd Sites
+  ```
+  
 - Clone the repo from Github onto your machine
-```
-$ git clone git@github.com:sturobson/simpleSass.git
-```
+  ```
+  $ git clone git@github.com:sturobson/simpleSass.git
+  ```
+  
 - Once the repo has installed enter the directory:
-```
-$ cd simpleSass
-```
+  ```
+  $ cd simpleSass
+  ```
+  
 - Install the Gulp plugins using NPM:
-```
-$ npm install
-```
+  ```
+  $ npm install
+  ```
 
 ## Running Simple Sass
 
