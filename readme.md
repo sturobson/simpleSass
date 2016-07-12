@@ -1,3 +1,5 @@
+[![Dependency Status](https://dependencyci.com/github/sturobson/simpleSass/badge)](https://dependencyci.com/github/sturobson/simpleSass)
+
 # Simple Sass
 
 ## A quick gulp Sass compiler / watcher / local server
